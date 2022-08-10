@@ -1,1 +1,1 @@
-# AccManager
+Run 'main.py'.
