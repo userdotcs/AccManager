@@ -1,4 +1,5 @@
 import os
+from commands import get, append, delete
 
 
 class account:
@@ -16,19 +17,9 @@ class command:
         self.command = command
 
     def run_command(self):
-        if self.command == 'append':
-            acc_name = input('Acc Name>> ').strip()
-            nick = input('Nick>> ').strip()
-            password = input('Password>> ').strip()
-            new_acc(acc_name, nick, password)
-        elif self.command == 'get':
-            acc_name = input('Acc Name>> ').strip()
-            print(get_infos_in_acc_file(acc_name).printaccinfos())
-        elif self.command == 'delete':
-            acc_name = input('Acc Name>> ').strip()
-            delete_acc(acc_name)
-        else:
-            print('Command not found.')
+        get.get_com(self.command).run_com()
+        delete.delete_com(self.command).run_com()
+        append.append_com(self.command).run_com()
 
 
 def get_infos_in_acc_file(accnick):
